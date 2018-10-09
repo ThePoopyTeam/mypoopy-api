@@ -1,4 +1,4 @@
-const { TestModel } = require('../models/testModel');
+const { TestModel } = require('../services/testService');
 
 
 module.exports = {

@@ -1,20 +1,13 @@
+const restful = require("node-restful");
+const mongoose = restful.mongoose;
 
 
-class TestModel {
+
+const testSchema = new mongoose.Schema({
+    name: { type: String, required: true },
+    type: { type: String, required: true },
+    amount: { type: Number, min: 0,  required: false }
+});
 
 
-    constructor() {
-        // alguma logica
-    }
-
-    testFunction() {
-        // ideal retornar uma promise
-        return new Promise((resolve, reserve) => {
-            resolve('Tudo funcionando como esperado!');
-        });
-    }
-
-}
-
-
-module.exports = { TestModel };
+module.exports = restful.model('Test', testSchema);
