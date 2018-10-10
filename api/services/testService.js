@@ -7,9 +7,9 @@ class TestService {
         
     }
     
-    getTestModel() {
+    getAll() {
         return new Promise((resolve, reject) => {
-            TestModel.findAll({}, (err, data) => {
+            TestModel.find({}, (err, data) => {
                 if (err) {
                     reject(err);
                 }
@@ -19,3 +19,5 @@ class TestService {
         });
     }
 }
+
+module.exports = { TestService };

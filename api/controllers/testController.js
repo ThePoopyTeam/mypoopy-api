@@ -1,4 +1,4 @@
-const { TestModel } = require('../services/testService');
+const { TestService } = require('../services/testService');
 
 
 module.exports = {
@@ -6,9 +6,9 @@ module.exports = {
         // algumas logicas podem ser colocar aqui no controller
 
         // chamada do model com sua logica 
-        const teste = new TestModel();
+        const teste = new TestService();
 
         // caso a regra do model retorne sucesso chama o then
-        teste.testFunction().then(data => res.send({ data }), err => next(err));
+        teste.getAll().then(data => res.send({ data }), err => next(err));
     }
 };
