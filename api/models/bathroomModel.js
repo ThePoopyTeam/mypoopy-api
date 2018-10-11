@@ -7,8 +7,8 @@ const BathroomSchema = new mongoose.Schema({
     caracte: [{ nome: String, icone: String }],
     lat: { type: Number, required: true },
     lon: { type: Number, required: true },
-    hAb: { type: Date },
-    hFe: { type: Date }
+    hAb: { type: String },
+    hFe: { type: String }
 });
 
 

@@ -14,22 +14,21 @@ module.exports = {
     },
     create: (req, res, next) => {
         const bathroom = new BathroomModel();
-        bathroom.nome = 'Banheiro da Sala';
-        bathroom.endereco = 'Rua X, nº 123';
-        bathroom.caracte = [{
-            nome: "unissex",
-            icone: "https://img.freepik.com/icones-gratis/toalete_318-82574.jpg?size=338&ext=jpg"
-        }];
-        bathroom.lat = 123.321;
-        bathroom.lon = 321.123;
-        bathroom.hAb = (new Date).getTime();
-        bathroom.hFe = (new Date).getTime();
+        const newBathroom = req.body;
+
+        bathroom.nome = newBathroom.nome;
+        bathroom.endereco = newBathroom.endereco;
+        bathroom.caracte = newBathroom.caracte;
+        bathroom.lat = newBathroom.lat;
+        bathroom.lon = newBathroom.lon;
+        bathroom.hAb = newBathroom.hAb;
+        bathroom.hFe = newBathroom.hFe;
 
         bathroom.save((err) => {
             if (err) {
                 next(err);
             } else {
-                res.send('Salvo!');
+                res.send({ status: 201 });
             }
         });
     }
