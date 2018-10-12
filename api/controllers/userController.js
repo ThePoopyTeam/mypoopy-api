@@ -21,10 +21,10 @@ module.exports = {
 
         user.save(err => {
             if (err) {
-                next("erro ao criar usuário")
+                next(err)
             }
             else {
-                res.send('SALVO!');
+                res.send({});
             }
         })
     }

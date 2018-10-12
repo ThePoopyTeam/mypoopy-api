@@ -28,7 +28,7 @@ module.exports = {
             if (err) {
                 next(err);
             } else {
-                res.send({ status: 201 });
+                res.send({});
             }
         });
     }
