@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const isUserAuthenticated = require('../middlewares/isUserAuthenticated');
 const userController = require('../controllers/userController');
 
 
-router.get('/', userController.findAll);
-router.post('/', userController.create);
+router.get('/', isUserAuthenticated, userController.findAll);
+router.post('/', isUserAuthenticated, userController.create);
 
 module.exports = router;
