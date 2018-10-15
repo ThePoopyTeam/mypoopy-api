@@ -1,4 +1,3 @@
-const testRoute = require('./testRoute');
 const userRoute = require('./userRoute');
 const bathroomRoute = require('./bathroomRoute');
 
