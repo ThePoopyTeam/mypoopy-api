@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const routes = require('./api/routes')
 const config = require('./config').get();
 const mongoose = require('mongoose');
+mongoose.connect(config.mongodb.url, { useNewUrlParser: true });
+
 const port = process.env.PORT || 3000;
 const environment = process.env.NODE_ENV || 'development';
 
