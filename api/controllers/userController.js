@@ -13,6 +13,7 @@ module.exports = {
         });
     },
     create: (req, res, next) => {
+        console.log(HEADERS =====>,req.headers);
         const user = new UserModel();
         const newUser = req.body;
         user.nome = newUser.nome;
