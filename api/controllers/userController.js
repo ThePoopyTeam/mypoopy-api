@@ -3,20 +3,21 @@ const UserModel = require('../models/userModel');
 module.exports = {
     // funções do controller de usuário
     
-    findAll: (req, res, next) => {
+    find: (req, res, next) => {
         UserModel.find({}).exec((err, data) => {
             if (err) {
                 next(err);
             }
 
             res.send(data);
-        })
+        });
     },
     create: (req, res, next) => {
         const user = new UserModel();
-        user.nome = "Fulano da Silva";
-        user.email = "fulano.silva@gmail.com";
-        user.imagem = "https://cdn3.iconfinder.com/data/icons/black-easy/512/538642-user_512x512.png";
+        const newUser = req.body;
+        user.nome = newUser.nome;
+        user.email = newUser.email;
+        user.imagem = newUser.imagem;
         user.experiencia = 0;
 
         user.save(err => {
