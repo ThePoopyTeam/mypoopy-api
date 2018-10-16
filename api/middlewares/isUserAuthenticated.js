@@ -1,7 +1,7 @@
 const admin = require('firebase-admin');
 
 module.exports = function(req, res, next) {
-    console.log(HEADERS =====>,req.headers);
+    console.log('HEADERS =====>',req.headers);
     if (req.headers.uid) {
         const uid = req.headers.uid;
         admin.auth().getUser(uid)
