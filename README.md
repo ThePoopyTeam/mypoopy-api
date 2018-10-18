@@ -49,5 +49,5 @@ Você deve passar o UID na header das requests.
 
 
 ## POSTMAN
-Segue o link das collections do postman para teste local.
+Segue o link das collections do postman para teste local:
 https://www.getpostman.com/collections/d669fea7a6ed3b105725
