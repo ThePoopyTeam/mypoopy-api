@@ -1,34 +1,33 @@
 const BathroomModel = require('../models/bathroomModel');
+const Bathroom = require('../models/bathroom');
 
 
 module.exports = {
-
     findAll: (req, res, next) => {
         BathroomModel.find({}).exec((err, data) => {
             if (err) {
                 next(err);
             }
-            
             res.send(data);
         });
     },
     create: (req, res, next) => {
         const bathroom = new BathroomModel();
-        const newBathroom = req.body;
+        const bath = new Bathroom(req.body);
 
-        bathroom.nome = newBathroom.nome;
-        bathroom.endereco = newBathroom.endereco;
-        bathroom.caracte = newBathroom.caracte;
-        bathroom.lat = newBathroom.lat;
-        bathroom.lon = newBathroom.lon;
-        bathroom.hAb = newBathroom.hAb;
-        bathroom.hFe = newBathroom.hFe;
+        bathroom.nome = bath.nome;
+        bathroom.endereco = bath.endereco;
+        bathroom.caracte = bath.caracte;
+        bathroom.lat = bath.lat;
+        bathroom.lon = bath.lon;
+        bathroom.hAb = bath.hAb;
+        bathroom.hFe = bath.hFe;
 
         bathroom.save((err) => {
             if (err) {
                 next(err);
             } else {
-                res.send({});
+                res.send(bathroom);
             }
         });
     }
