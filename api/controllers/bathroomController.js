@@ -14,7 +14,9 @@ module.exports = {
     create: (req, res, next) => {
         const bathroom = new BathroomModel();
         const bath = new Bathroom(req.body);
+        const uid = req.headers.uid;
 
+        bathroom.uid = uid;
         bathroom.nome = bath.nome;
         bathroom.endereco = bath.endereco;
         bathroom.caracte = bath.caracte;
