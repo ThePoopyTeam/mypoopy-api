@@ -12,6 +12,4 @@ const BathroomSchema = new mongoose.Schema({
     hFe: { type: String, required: true }
 });
 
-
-
 module.exports = restful.model('Bathroom', BathroomSchema);

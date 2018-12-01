@@ -13,7 +13,6 @@ module.exports = function(req, res, next) {
                 }
             })
             .catch(function(error) {
-                console.log('UID inválida!');
                 res.status(401);
                 res.send({ error, message: 'UID inválida.'});
             });
